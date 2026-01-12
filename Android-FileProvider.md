@@ -16,7 +16,7 @@
       - name="myfiles"：表示 path 目录 images/ 对应的别名叫 myfiles，那么文件`data/data/应用包名/files/images/abc.txt`实际对方应用看到的路径是`content://com.example.mydemo.fileprovider/myfiles/abc.txt`
       - 如果 path="."：表示 允许访问这个目录下的所有文件，即 data/data/应用包名/files/ 下的所有文件
   - 获取uri：val uri = FileProvider.getUriForFile(context, context.packageName + ".fileprovider", file)
-  - 给uri授权：例如授权给`com.example.aaaa`这个包名的应用访问uri的权限，权限包括读和写，context.grantUriPermission("com.example.aaaa", uri, Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+  - 给uri授权：例如**授权给`com.example.aaaa`这个包名的应用访问uri的权限**，权限包括读和写，context.grantUriPermission("com.example.aaaa", uri, Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
   - 通过Intent传递出去：putExtra("shareUri", uri)
   - 在`com.example.aaaa`这个包名的应用中使用uri：contentResolver.openInputStream(intent.getParcelableExtra<Uri>("shareUri")).use { ...读取uri所指向文件里的内容... }
 
@@ -77,9 +77,9 @@
 if (VERSION.SDK_INT >= Build.VERSION_CODES.N) { // 7.0+ 开始
     val uri = FileProvider.getUriForFile(context, context.packageName + ".fileprovider", file) // 获取 uri
     context.grantUriPermission( // 授权
-        "com.example.aaaa",
+        "com.example.aaaa", // 对方应用的包名
         uri,
-        Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+        Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION // 授予对方可执行的权限，这里是读和写，一般只授予读权限
     )
     startActivity(Intent().apply {
         component = ComponentName.createRelative("com.example.aaaa", "com.example.aaaa.MainActivity")
