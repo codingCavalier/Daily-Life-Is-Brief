@@ -1,3 +1,6 @@
+#### 存储权限变革
+android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+
 #### FileProvider
 - 安卓7开始执行
   - 安卓7之前：val uri = Uri.fromFile(File("")) // file://文件绝对路径，不安全，暴露了目录结构
