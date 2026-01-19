@@ -39,10 +39,28 @@ override fun attachBaseContext(base: Context?) {
 }
 ```
 ##### 问题2
-- 
+- 某些第三方库，代码中的限制，低于21直接抛出异常导致程序无法继续运行，如`com.squareup.okhttp3:okhttp:4.4.0`中的代码：
+```Kotlin
+val isSupported: Boolean = when {
+  !isAndroid -> false
+  else -> {
+    // Fail Fast
+    check(
+        Build.VERSION.SDK_INT >= 21) { "Expected Android API level 21+ but was ${Build.VERSION.SDK_INT}" }
 
+    true
+  }
+}
+```
+- 降低第三方库的版本。首先要查明，哪些地方引入了这个第三方库的这个版本：
+- Terminal命令行中执行`.\gradlew :app:androidDependencies`查看有哪些构建变体
+- 然后执行`./gradlew :app:dependencyInsight --dependency okhttp:4.4.0 --configuration 某个你喜欢的构建变体`
+    - 例如：./gradlew :app:dependencyInsight --dependency okhttp:4.4.0 --configuration debugRuntimeClasspath
+- 这是我的依赖情况，可以自己分析一下最根上是哪个库引入了这个第三方库的这个版本：
+- <img width="544" height="355" alt="image" src="https://github.com/user-attachments/assets/0cf4059b-b8ec-440e-adf0-cde2bf06e496" />
 
-
+##### 问题3
+- 编译时报错：Unrecognized VM option 'MaxPermSize=512m'，因为Java 8移除了此项配置，可以改为：-XX:MaxMetaspaceSize=512m
 
 
 
