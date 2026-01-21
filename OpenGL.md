@@ -16,11 +16,15 @@
 - 现代 OpenGL 转变为可编程（Programmable）渲染管线，而这里的编程语言就是 GLSL 语言，它是一种类 C 的语言，专为图形计算量身定制，包含了一些针对向量和矩阵操作的有用特性，我们用它编写我们自己的顶点着色器和片段着色器。
 - **着色器**就是一段运行在 GPU 中的程序，这段程序由开发者编写，所以说为开发者提供了很大的灵活度和可掌控度。现在 OpenGL 主要有三种着色器：顶点着色器、几何着色器、片段着色器，其中顶点着色器和片段着色器为开发者必须提供，几何着色器为可选提供。
 
-
+### EGL
 - 如果我们了解了 OpenGL ES 就会知道，虽然它定义了一套移动设备的图像渲染 API，但是并没有定义窗口系统。为了让 GLES 能够适配各种平台，GLES 需要与知道如何通过操作系统创建和访问窗口的库结合使用，这就有了 EGL，EGL 是 OpenGL ES 渲染 API 和本地窗口系统之间的一个中间接口层，它主要由系统制造商实现。EGL 提供如下机制：
   - 与设备的原生窗口系统通信；
   - 查询绘图图层的可用类型和配置；
   - 创建绘图图层；
   - 在 OpenGL ES 和其他图形渲染 API 之间同步渲染；
   - 管理纹理贴图等渲染资源。
-  - EGL 是 OpenGL ES 与设备的桥梁，以实现让 OpenGL ES 能够在当前设备上进行绘制。
+- **EGL 是 OpenGL ES 与设备的桥梁，以实现让 OpenGL ES 能够在当前设备上进行绘制。**
+- <img width="668" height="519" alt="image" src="https://github.com/user-attachments/assets/8190b9ec-2e0c-4753-8566-b49111b76afa" />
+- Display 是对实际显示设备的抽象。在 Android 上的实现类是 EGLDisplay。
+- Surface 是对用来存储图像的内存区域 FrameBuffer 的抽象，包括 Color Buffer、Stencil Buffer、Depth Buffer。在 Android 上的实现类是 EGLSurface。
+- Context 存储 OpenGL ES 绘图的一些状态信息。在 Android 上的实现类是 EGLContext。
