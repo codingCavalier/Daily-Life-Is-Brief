@@ -1,4 +1,4 @@
-<img width="668" height="519" alt="image" src="https://github.com/user-attachments/assets/a8c39959-9e55-4e55-98e5-d22603efa099" />### 一些入门的文章
+### 一些入门的文章
 - https://zhuanlan.zhihu.com/p/568908494
 - https://zhuanlan.zhihu.com/p/579253989
 
@@ -29,3 +29,15 @@
 - Surface 是对用来存储图像的内存区域 FrameBuffer 的抽象，包括 Color Buffer、Stencil Buffer、Depth Buffer。在 Android 上的实现类是 **EGLSurface**。
 - Context 存储 OpenGL ES 绘图的一些状态信息。在 Android 上的实现类是 **EGLContext**。
 - 这里需要注意的是 EGL 的工作模式是双缓冲模式，其内部有两个 FrameBuffer（帧缓冲区）：BackFrameBuffer 和 FrontFrameBuffer，当 EGL 将一个 FrameBuffer 显示到屏幕上的时候，另一个 FrameBuffer 就在后台等待 OpenGL ES 进行渲染输出。直到调用了 eglSwapBuffer() 这条指令的时候，才会把前台的 FrameBuffer 和后台的 FrameBuffer 进行交换，这时界面呈现的就是 OpenGL ES 刚刚渲染的内容了。
+
+### WindowSurface
+- 窗口渲染
+- 创建参数里需要一个SurfaceHolder，一般搭配SurfaceView使用
+
+### PbufferSurface
+- 离屏渲染
+- 如果创建参数里配置了FORMART和TARGET，则可以作为FBO的颜色附件进行绑定，后续可以通过FBO进行渲染写入，也可以进行2d采样。如果没有配置FORMART和TARGET，则只能用于像素读取，例如glReadPixels
+
+### FBO
+- 可以理解成一个指向某块纹理或者buffer的指针
+- FBO 不能绑定外部纹理GL_TEXTURE_EXTERNAL_OES，只能绑定内部纹理GL_TEXTURE_2D，因为外部纹理是只读输入源
