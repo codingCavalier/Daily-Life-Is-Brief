@@ -35,7 +35,7 @@
 
 ### WindowSurface
 - 窗口渲染
-- 创建参数里需要一个SurfaceHolder，一般搭配SurfaceView使用
+- 创建参数里需要SurfaceView或者SurfaceHolder或者Surface
 
 ### PbufferSurface
 - 离屏渲染（旧版本）
