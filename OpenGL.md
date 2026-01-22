@@ -1,6 +1,9 @@
 ### 一些入门的文章
+- 主页地址：https://www.zhihu.com/people/69-30-74-45/search?keyword=OpenGL&pathBefore=%2Fpeople%2F69-30-74-45%2Fposts
 - https://zhuanlan.zhihu.com/p/568908494
 - https://zhuanlan.zhihu.com/p/579253989
+- https://zhuanlan.zhihu.com/p/585126881
+- https://zhuanlan.zhihu.com/p/585629860
 
 - OpenGL 是一套跨语言、跨平台，支持 2D、3D 图形渲染接口。这套接口由一系列的函数组成，定义了如何对简单及复杂的图形进行绘制。这套接口涉及到对设备的图像硬件进行调用，因此在不同的平台基于这套统一接口做了对应的实现。
 - OpenGL ES 是 OpenGL 的子集，是针对手机和游戏主机等嵌入式设备而设计，去除了许多不必要和性能较低的 API 接口。
@@ -35,9 +38,11 @@
 - 创建参数里需要一个SurfaceHolder，一般搭配SurfaceView使用
 
 ### PbufferSurface
-- 离屏渲染
+- 离屏渲染（旧版本）
 - 如果创建参数里配置了FORMART和TARGET，则可以作为FBO的颜色附件进行绑定，后续可以通过FBO进行渲染写入，也可以进行2d采样。如果没有配置FORMART和TARGET，则只能用于像素读取，例如glReadPixels
 
 ### FBO
+- 离屏渲染（新版本）
 - 可以理解成一个指向某块纹理或者buffer的指针
+- 如果只是做离屏渲染，则无需创建任何Surface（WindowSurface或者PbufferSurface均不需要），直接将FBO绑定到一个纹理上即可
 - FBO 不能绑定外部纹理GL_TEXTURE_EXTERNAL_OES，只能绑定内部纹理GL_TEXTURE_2D，因为外部纹理是只读输入源
