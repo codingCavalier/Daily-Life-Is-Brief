@@ -4,15 +4,17 @@
 - https://zhuanlan.zhihu.com/p/579253989
 - https://zhuanlan.zhihu.com/p/585126881
 - https://zhuanlan.zhihu.com/p/585629860
-
-- OpenGL 是一套跨语言、跨平台，支持 2D、3D 图形渲染接口。这套接口由一系列的函数组成，定义了如何对简单及复杂的图形进行绘制。这套接口涉及到对设备的图像硬件进行调用，因此在不同的平台基于这套统一接口做了对应的实现。
-- OpenGL ES 是 OpenGL 的子集，是针对手机和游戏主机等嵌入式设备而设计，去除了许多不必要和性能较低的 API 接口。
-- Metal 是苹果为了解决 3D 渲染性能问题而推出的框架，该技术将 3D 图形渲染性能提高了 10 倍。
-- Vulkan 是一套新的跨平台支持 2D、3D 图形渲染的接口。Vulkan 针对全平台即时 3D 程序（如电子游戏和交互媒体）设计，并提供高性能与更均衡的 CPU/GPU 使用。
-- **谷歌则是从 2016 年的 Android N（安卓 7.0）开始支持 Vulkan API。当然 OpenGL ES 也仍是持续支持的。**
+### 简介
+- OpenGL 是一套跨语言、跨平台，支持 2D、3D 图形渲染的接口。
+  - 这套接口由一系列的函数组成，定义了如何对简单及复杂的图形进行绘制。这套接口涉及到对设备的图像硬件进行调用，因此在不同的平台基于这套统一接口做了对应的实现。
+- OpenGL ES 是 OpenGL 的子集，是针对手机和游戏主机等嵌入式设备而设计的，去除了许多不必要的和性能较低的 API 接口。
+  - Metal 是苹果为了解决 3D 渲染性能问题而推出的框架，该技术将 3D 图形渲染性能提高了 10 倍。
+  - Vulkan 是一套新的跨平台支持 2D、3D 图形渲染的接口。Vulkan 针对全平台即时 3D 程序（如电子游戏和交互媒体）设计，并提供高性能与更均衡的 CPU/GPU 使用。
+  - **谷歌则是从 2016 年的 Android N（安卓 7.0）开始支持 Vulkan API。当然 OpenGL ES 也仍是持续支持的。**
 - 在日常开发中，开发者一般通过使用上层 API 来构建和绘制界面，而调用 API 时系统最终还是通过 OpenGL/Metal/Vulkan 来实现视图的渲染。开发者也可以直接使用 OpenGL/Metal/Vulkan 来驱动 GPU 芯⽚⾼效渲染图形图像以满足一些特殊的需求。
+### 架构
 - OpenGL 的渲染架构是 Client/Server 模式
-- OpenGL 提供了 3 个通道来让我们从 Client 向 Server 中的顶点着色器（Vertex Shader）和片元着色器（Fragment Shader）传递参数和渲染信息：**Attribute、Uniform、Texture Data**
+- **数据传输**：OpenGL 提供了 3 个通道来让我们从 Client 向 Server 中的顶点着色器（Vertex Shader）和片元着色器（Fragment Shader）传递参数和渲染信息：**Attribute、Uniform、Texture Data**
 - **一个巨大的状态机**
 - **图形渲染管线**：顶点着色器 → 图元装配 → 几何着色器 → 光栅化 → 片段着色器 → 测试与混合。
 - <img width="641" height="435" alt="image" src="https://github.com/user-attachments/assets/43db120a-9fcc-4c22-8d0f-1df6e00ff602" />
