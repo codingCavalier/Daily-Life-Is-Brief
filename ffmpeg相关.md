@@ -32,8 +32,8 @@ fps=24：每秒导出24帧图片，%3d表示编号是三位数 <br>
 6、缩放视频尺寸：<br>
 ffmpeg -i input.mp4 -vf "scale=1280:800:force_original_aspect_ratio=decrease,pad=1280:800:(ow-iw)/2:(oh-ih)/2" -c:a copy output.mp4 <br>
 - -vf：是 video filter 的意思，表示应用后续配置的一系列滤镜，每个滤镜顺序执行，逗号隔开
-- scale=1280:800:force_original_aspect_ratio=decrease：表示缩放到1280x800比例，force_original_aspect_ratio表示强制保持原视频宽高比，decrease表示缩小到1280x800范围内（可能有黑边），increase表示放大到1280x800范围内（可能裁剪），不配置force_original_aspect_ratio表示强制拉伸原画面到1280x800范围内
-- pad=1280:800:(ow-iw)/2:(oh-ih)/2:0xffffff：表示将输出画面放入1280x800画面上，ow表示output width，iw表示input width，(ow-iw)/2表示x方向的偏移是居中，同理ow-iw表示x方向的偏移是居右，同理0表示居左。最后的填充颜色可写可不写，默认黑色。
+- scale=1280:800:force_original_aspect_ratio=decrease：缩放滤镜，表示缩放到1280x800比例，force_original_aspect_ratio表示强制保持原视频宽高比，decrease表示缩小到1280x800范围内（可能有黑边），increase表示放大到1280x800范围内（可能裁剪），不配置force_original_aspect_ratio表示强制拉伸原画面到1280x800范围内
+- pad=1280:800:(ow-iw)/2:(oh-ih)/2:0xffffff：填充滤镜，表示将输出画面放入1280x800范围内，其他缝隙的地方用最后的颜色填充，ow表示output width，iw表示input width，(ow-iw)/2表示x方向的偏移是居中，同理ow-iw表示x方向的偏移是居右，同理0表示居左。最后的填充颜色可不写，默认是黑色。
 - -c:a copy：其中的c表示codec，a表示audio，即这是用于指定音频编解码的配置，copy表示原样拷贝。
 - <img width="810" height="378" alt="image" src="https://github.com/user-attachments/assets/bc4a2246-8b4e-44e9-baa4-be140fa45775" />
 
