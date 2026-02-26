@@ -1,0 +1,4 @@
+- onSurfaceTextureAvailable 回调的尺寸是 SurfaceTexture 的缓冲区尺寸
+- 当缓冲区尺寸发生变化时，会回调 onSurfaceTextureSizeChanged 方法
+- 如果 TextureView 是1920x1080(16:9)大小，视频也恰好是1920x1080大小，那么将不会回调 onSurfaceTextureSizeChanged 方法
+- 如果 TextureView 是1920x1080(16:9)大小，视频是1215x2160(9:16)大小，不改变 TextureView 大小的情况下，使用 MediaPlayer 播放视频，视频将拉伸全屏显示(16:9)
