@@ -21,3 +21,27 @@
     - 也有default缺省分支
 - 遍历：
   - for：
+    - **TypeScript支持for...in遍历，但是ArkTS不支持**
+    - ArkTS支持for...of遍历（拿到值）。TypeScript也支持。
+```ArkTS
+// 普通for循环
+for (let i = 0; i < 10; i++) {
+  console.log(`${i}`);
+}
+// 普通while循环
+let i = 0;
+while (i < 10) {
+  console.log(`i=${i}`);
+  i++;
+}
+// TypeScript支持for...in遍历（拿到角标），但是ArkTS不支持
+let arr: string[] = ['a', 'b', 'c']
+for (const i in arr) {
+  console.log(arr[i]);
+}
+// ArkTS支持for...of遍历（拿到值）
+let arr: string[] = ['a', 'b', 'c']
+for (const str of arr) {
+  console.log(str);
+}
+```
