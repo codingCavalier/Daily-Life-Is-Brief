@@ -21,8 +21,8 @@
     - 也有default缺省分支
 - 遍历：
   - for：
-    - **TypeScript支持for...in遍历，但是ArkTS不支持**
-    - ArkTS支持for...of遍历（拿到值）。TypeScript也支持。
+    - **TypeScript支持for...in遍历（拿到角标），但是ArkTS不支持**
+    - ArkTS支持for...of遍历（拿到值）。TypeScript也支持。**记住const关键字接收遍历的值**
 ```ArkTS
 // 普通for循环
 for (let i = 0; i < 10; i++) {
