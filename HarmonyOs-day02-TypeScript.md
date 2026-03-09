@@ -63,6 +63,7 @@ for (const str of arr) {
   - 实例化用new关键字，let a: A = new A()
 - 引入其他文件的类和方法：
   - <img width="541" height="309" alt="image" src="https://github.com/user-attachments/assets/3cf4f4d5-49e0-43f7-95f6-81ea8783d405" />
+  - 也可以这样定义，使用箭头函数：export const add1 = (a: number, b: number): number => { return a + b; }
   - <img width="362" height="66" alt="image" src="https://github.com/user-attachments/assets/acbc891f-2383-47af-b9ae-15ecf42dbeb3" />
 
 
