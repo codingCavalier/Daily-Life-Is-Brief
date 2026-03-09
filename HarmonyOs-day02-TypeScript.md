@@ -9,7 +9,15 @@
 - 容器类型：
   - 数组：`let arr: string[] = ['abc','def']`或者`let arr: Array<string> = ['aaa','bbb']`，取值`arr[0]`，如果所取角标越界则返回undefined
 - 逻辑控制：
-  - if - else：允许多分支即if - else-if - else-if - else
-  - 使用===判断，即要类型相同，又要数值相同
-  - 使用==判断，默认自动类型转换后对比值是否相同，建议使用===，因为==有类型转换性能开销以及不确定后果
-  - 空字符串''、数字0、null、undefined：这几个值都表示false，其他值都表示true
+  - if - else：
+    - 允许多分支即if - else-if - else-if - else
+    - 使用===判断，即要类型相同，又要数值相同
+    - 使用==判断，默认自动类型转换后对比值是否相同，建议使用===，因为==有类型转换性能开销以及不确定后果
+    - **空字符串''、数字0、null、undefined：这几个值都表示false，其他值都表示true**
+  - switch：
+    - 也是用case关键字：case 'abc': { let x = 0; break; }
+    - 大括号可写可不写，写了大括号，则形成此case自己的作用域，内部定义的变量不与其他分支冲突
+    - **也是必须写break**
+    - 也有default缺省分支
+- 遍历：
+  - for：
