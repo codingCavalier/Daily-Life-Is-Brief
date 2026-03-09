@@ -23,6 +23,7 @@
   - for：
     - **TypeScript支持for...in遍历（拿到角标），但是ArkTS不支持**
     - ArkTS支持for...of遍历（拿到值）。TypeScript也支持。**记住const关键字接收遍历的值**
+  - while
 ```ArkTS
 // 普通for循环
 for (let i = 0; i < 10; i++) {
@@ -45,3 +46,16 @@ for (const str of arr) {
   console.log(str);
 }
 ```
+- 定义函数：箭头函数
+  - 箭头函数表达式（写方法中）：let func1 = (name: string): number => { console.log(`Hello ${name}`); return 30; }
+  - 成员函数（写类中）：func1 = (name: string): number => { console.log(`Hello ${name}`); return 30; }
+  - 可选参数（参数名加问号?）：func1 = (name?: string): number => { console.log(`Hello ${name}`); return 30; }
+  - 默认参数（有默认值）：func1 = (name: string = '路人甲'): number => { console.log(`Hello ${name}`); return 30; }
+- 枚举类型：
+  - 不赋值，默认打印的是角标（从0开始）
+  - 赋值，打印的是所赋的值
+  - **不支持混合类型，即有的赋值number，有的赋值string，这样不允许**
+- 接口：interface People
+- 类：class，实现接口 class A implements People
+- 创建对象：let a: A = new A()
+- 
