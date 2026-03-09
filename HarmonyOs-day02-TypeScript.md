@@ -55,7 +55,14 @@ for (const str of arr) {
   - 不赋值，默认打印的是角标（从0开始）
   - 赋值，打印的是所赋的值
   - **不支持混合类型，即有的赋值number，有的赋值string，这样不允许**
-- 接口：interface People
-- 类：class，实现接口 class A implements People
-- 创建对象：let a: A = new A()
-- 
+- 接口：
+  - interface People { name: string; age: number }
+- 类：
+  - class A implements People
+  - 只能有一个构造函数constructor(name: string = '', age: number = 20) { this.name=name; ... }
+  - 实例化用new关键字，let a: A = new A()
+- 引入其他文件的类和方法：
+  - <img width="541" height="309" alt="image" src="https://github.com/user-attachments/assets/3cf4f4d5-49e0-43f7-95f6-81ea8783d405" />
+  - <img width="362" height="66" alt="image" src="https://github.com/user-attachments/assets/acbc891f-2383-47af-b9ae-15ecf42dbeb3" />
+
+
