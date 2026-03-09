@@ -1,1 +1,15 @@
-
+- let定义变量，const定义常量
+- 基本类型：
+  - number：数字
+  - string：字符串
+  - boolean：布尔
+  - any：类似Kotlin的Any或者Java的Object，**但是ArkTS不让用any类型**
+  - union类型：使用竖线分隔，let p: string|number = '';表示p可以是字符串或者数字中的一种类型
+  - 对象类型：比如用interface定义的People类，let p: People = {name:'Andy', age: 20}，取值p.name，**ArkTS中必须写明类型People，而TypeScript中可以不写，默认Object类型**
+- 容器类型：
+  - 数组：`let arr: string[] = ['abc','def']`或者`let arr: Array<string> = ['aaa','bbb']`，取值`arr[0]`，如果所取角标越界则返回undefined
+- 逻辑控制：
+  - if - else：允许多分支即if - else-if - else-if - else
+  - 使用===判断，即要类型相同，又要数值相同
+  - 使用==判断，默认自动类型转换后对比值是否相同，建议使用===，因为==有类型转换性能开销以及不确定后果
+  - 空字符串''、数字0、null、undefined：这几个值都表示false，其他值都表示true
