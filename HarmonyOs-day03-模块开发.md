@@ -1,4 +1,4 @@
-- <img width="980" height="655" alt="image" src="https://github.com/user-attachments/assets/a7dc9584-620c-49f5-ba73-cb5c68ef3848" />
+- <img width="980" height="348" alt="image" src="https://github.com/user-attachments/assets/078dfe8e-14f4-4c0b-a056-d6d33f186ca7" />
 #### Ability
 - 可以创建entry或者feature，产物是HAP或者APP
 #### Native C++
