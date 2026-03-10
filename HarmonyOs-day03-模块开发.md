@@ -37,4 +37,7 @@
   - <img width="516" height="246" alt="image" src="https://github.com/user-attachments/assets/41eea116-ea63-4cd8-a42e-c8a4e3847f87" />
   - 在entry模块的oh-package.json5中，导入依赖
   - <img width="527" height="281" alt="image" src="https://github.com/user-attachments/assets/44655b63-159e-4215-bd4b-449f7df71c8e" />
+  - 在entry模块的类中，引入依赖
+  - <img width="607" height="52" alt="image" src="https://github.com/user-attachments/assets/6f3cfb0a-0585-453a-abfd-769f2b938a3d" />
+
 
