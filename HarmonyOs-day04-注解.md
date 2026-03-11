@@ -1,0 +1,23 @@
+- 注解：
+  - 状态管理：
+    - @State：组件私有，变化触发UI更新
+    - @Prop：单向传递，由外到内，外变则内变，内变而外不变
+    - @Link：双向同步，内外同步变化
+    - @Provide/@Consume：跨层级传递
+    - @ObjectLink：监听对象内部属性变化
+    - @Watch：状态变化时执行回调
+  - UI组件：
+    - @Component：可复用的UI单元
+    - @Entry：应用启动的页面
+    - @Builder：构建UI的函数
+    - @BuilderParam：接收UI构建函数作为参数
+  - 生命周期：
+    - @StorageProp：读取持久化数据，变化不自动同步
+    - @StorageLink：读写持久化数据，变化自动同步
+    - @LocalStorageLink：页面间共享状态
+  - 性能优化：
+    - @Reusable：复用已销毁的组件实例
+    - @Track：精准控制属性更新范围
+  - 自定义：
+    - @Styles：定义可复用的样式
+    - @Extend：扩展已有组件的样式
