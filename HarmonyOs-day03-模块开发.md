@@ -30,14 +30,16 @@
 - 创建工具类：在hsp模块下的utils包中，创建CountdownUtil.ets文件，里面创建CountdownImpl类
 - 导出工具类：
   - 要导出的类必须用export修饰，其他类和模块才能使用，export class CountdownImpl implements Countdown { ... }
-  - 二次导出：与src平级创建Index.ets文件，并导出CountdownImpl，可以用as起别名，二次导出的好处是，方便管理（约定大于强制，此处没有控制可见性的作用），方便使用方引入：
+  - 二次导出：**与src平级创建Index.ets文件**，并导出CountdownImpl，可以用as起别名，二次导出的好处是，方便管理（约定大于强制，此处没有控制可见性的作用），方便使用方引入：
   - <img width="741" height="130" alt="image" src="https://github.com/user-attachments/assets/90754d97-a624-4046-b8fd-29e963442f38" />
 - 使用方添加hsp模块的依赖：
   - 确认hsp模块的oh-package.json5中，名称是lib_b_shared_3568
   - <img width="516" height="246" alt="image" src="https://github.com/user-attachments/assets/41eea116-ea63-4cd8-a42e-c8a4e3847f87" />
   - 在entry模块的oh-package.json5中，导入依赖
   - <img width="527" height="281" alt="image" src="https://github.com/user-attachments/assets/44655b63-159e-4215-bd4b-449f7df71c8e" />
-  - 在entry模块的类中，引入依赖
+  - 在entry模块的类中，引入依赖，由于默认指向Index.ets文件，所以`/Index`路径可以省略
   - <img width="607" height="52" alt="image" src="https://github.com/user-attachments/assets/6f3cfb0a-0585-453a-abfd-769f2b938a3d" />
+  - <img width="556" height="25" alt="image" src="https://github.com/user-attachments/assets/996ed5ae-6f1e-47f8-be47-7a79bf820eed" />
+
 
 
