@@ -19,6 +19,10 @@
 - **组件复用**
 - <img width="435" height="331" alt="image" src="https://github.com/user-attachments/assets/62654d79-ebb4-4f7b-9b23-d5579c5284b9" />
 - <img width="348" height="654" alt="image" src="https://github.com/user-attachments/assets/9caa665e-b383-4bb8-bab8-150c0f4ca4d4" />
+- **注解的使用**
+- @State：组件内私有，用它标记的成员变量，将会和ui联动，它的数值变化，会引起ui更新
+- @Watch('onTick')：监听某个变量的变化，当值发生变化时会触发调用onTick方法，如果值和上次相同，则不会触发调用onTick方法
+- <img width="611" height="261" alt="image" src="https://github.com/user-attachments/assets/b0948d27-0bb9-4671-b69c-cf51055ae1b1" />
 
 
 
