@@ -1,3 +1,9 @@
-- onSurfaceTextureAvailable 回调的尺寸是 SurfaceTexture 的缓冲区尺寸
-- 当缓冲区尺寸发生变化时，会回调 onSurfaceTextureSizeChanged 方法
-- 如果 TextureView 是1920x1080(16:9)大小，视频是1215x2160(9:16)大小，不改变 TextureView 大小的情况下，使用 MediaPlayer 播放视频，视频将拉伸全屏显示(16:9)
+- textureView.isOpaque = false
+  - 当设置为 false 时，系统会将底层的 SurfaceTexture 配置为支持 Alpha 通道，允许 RGBA 中的 Alpha 分量生效。
+  - 当设置为 true（默认）时，系统可能使用 RGBX 等不含 Alpha 通道的像素格式，Alpha 值会被忽略。
+  - 简单理解：Opaque 翻译过来叫“不透明”，默认是 true，即 SurfaceTexture 不透明，既然不透明，那么就忽略 Alpha 值的计算，默认都是1，即完全不透明。
+- onSurfaceTextureAvailable
+  - 回调的尺寸是 SurfaceTexture 的缓冲区尺寸
+- onSurfaceTextureSizeChanged
+  - 当缓冲区尺寸发生变化时(例如：改变 TextureView 的大小)，会回调此方法
+  - 如果 TextureView 是1920x1080(16:9)大小，视频是1215x2160(9:16)大小，不改变 TextureView 大小的情况下，使用 MediaPlayer 播放视频，视频将拉伸全屏显示(16:9)
