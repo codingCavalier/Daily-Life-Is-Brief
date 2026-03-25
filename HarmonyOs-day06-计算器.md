@@ -34,6 +34,9 @@
   - 定义接口和常量实例
     - <img width="453" height="349" alt="image" src="https://github.com/user-attachments/assets/4d2c75bc-862c-48dd-b968-ea5211aeb4ba" />
   - 添加了`@Component`注解的类，父类其实是`BaseCustomComponent`
+  - 文本引用资源。设置行高。
+  - <img width="447" height="167" alt="image" src="https://github.com/user-attachments/assets/8d3f91d8-64df-4361-8133-a6db159f45b5" />
+
 
 
 
