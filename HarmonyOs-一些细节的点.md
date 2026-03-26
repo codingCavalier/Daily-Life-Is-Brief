@@ -12,3 +12,12 @@
   - 解决办法：将接口放到ts文件中，而非ets文件中！
 
 3. 如果箭头函数里只有一个参数，可以省略括号，写成这样：onChange(value => { })，否则就要写括号：onChange((value) => { })
+
+4. 容器类的对齐
+  - 主轴对齐：justifyContent(FlexAlign.End)，设置主轴长度后才有效果，否则是包裹内容，看不出效果
+    - SpaceBetween：组件间平分剩余间隙，两头的组件紧贴边缘
+    - SpaceAround：组件均分剩余间隙，并在各自范围内居中
+    - SpaceEvenly：边缘到组件、组件到组件，均分剩余间隙
+  - 交叉轴对齐：alignItems(HorizontalAlign.Start)，同理，需要设置长度
+
+5. 
