@@ -11,3 +11,4 @@
 - **特别重要：**，使用“对象字面量”方式传参如果编辑器代码检查报错（Object literal must correspond to some explicitly declared class or interface (arkts-no-untyped-obj-literals) <ArkTSChec>）
   - 解决办法：将接口放到ts文件中，而非ets文件中！
 
+3. 如果箭头函数里只有一个参数，可以省略括号，写成这样：onChange(value => { })，否则就要写括号：onChange((value) => { })
